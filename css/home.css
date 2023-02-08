@@ -1,0 +1,124 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    overflow-x: auto;
+    background: antiquewhite;
+    /* no-repeat;
+    background-size: cover;
+    background-position: center; */
+} 
+.home_content{
+    width:100%;
+    color: black;
+
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: 6em;
+    padding-top: 10px;
+} 
+.body{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+.col{
+    width:80em;
+    margin:auto;
+}
+
+.home_content .col .card.card1 button{
+background-color: darkcyan;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.home_content .col .card.card1 button:hover{
+    background-color: darkgray;
+    color: black;
+    
+}
+.fa-solid fa-plus{
+    font-size: 20px;
+}
+.home_content .col .card h3{
+    border-bottom: 2px solid darkcyan;
+    display: inline-block;
+    /* border-bottom-left-radius: 6px; */
+    margin-bottom: 15px;
+}
+.card {
+    width: 37em;
+    height: 27em;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    box-shadow: 0 8px 25px 0 rgb(0 0 0);
+    background-color: white;
+    /* backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: 2px solid antiquewhite;
+    border-left: 2px solid white; */
+}
+.card1, .card2 {
+float: left;
+}
+/* .card3, .card4 {
+clear: both;
+float: left;
+width: 50%;
+} */
+.form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  font-size: larger;
+  color: black;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 85%;
+    height: 30px;
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+button[type="submit"],
+button[type="button"] {
+  width: 45%;
+  height: 40px;
+  padding: 10px;
+  font-size: larger;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+
