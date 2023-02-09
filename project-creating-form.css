@@ -10,7 +10,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: antiquewhite;
+    background: #eee;
 }
 .container{
     position: relative;
@@ -21,6 +21,13 @@ body{
     margin: 0 15px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0,0.1);
+}
+a{
+    position: relative;
+    left: 54em;
+    z-index: 1;
+    bottom: 16em;
+    color:black;
 }
 .container header{
     position: relative;
@@ -35,7 +42,7 @@ body{
     bottom: -2px;
     height:3px;
     width: 27px;
-    background-color: #4070f4;
+    background-color: darkcyan;
 }
 .container form{
     position: relative;
@@ -104,4 +111,27 @@ color: #2e2e2e;
     padding: 0 15px;
     height: 42px;
     margin: 8px 0;
+}
+.container form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border:none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: darkcyan;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: darkgray;
+    color: black;
+}
+form button i{
+    margin: 0 6px;
 }

@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link rel="stylesheet" href="project-creating-form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    <a href="javascript:history.back()">
+  <i class="fa-solid fa-xmark"></i>
+</a>
     <div class="container">
         <header>Create project</header>
 
@@ -120,6 +124,10 @@
                             </select>
                         </div>
                     </div>
+                    <button class="btn">
+                        <span class="btntext">Create</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
                 </div>
             </div>
         </form>

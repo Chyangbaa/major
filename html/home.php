@@ -36,37 +36,98 @@ include './greeting.php';
         <div class="col">
 				<div class="card card1">
 					<h3>Projects</h3> <br>
-					<button id="openFormBtn"><i class="fa-solid fa-plus"></i>Create Project</button>
+                    <p>You don't have any projects yet !</p>
+                    <!-- <img src="../illustrations/Whoosh/VR.png" alt="" width="200" height="250"> -->
+					<!-- <button><i class="fa-solid fa-plus"></i>Create Project</button> -->
+                    <a href="../project-creating-form.php"><button>Create project</button></a>
 				</div>
 				<div class="card card2">
-					<h3>Your Group</h3>
+					<h3>Your team members</h3>
 					<p></p>
-					<a href="airdetails.php"></a>
-                    <button style="cursor:pointer;"id="openFormBtn">Create group</button>
+                    <button style="cursor:pointer;"id="openFormBtn">Manage team</button>
 				</div>
                 <div class="card card3">
 					<h3>Your Group</h3>
 					<p></p>
-					<a href="airdetails.php"></a>
-                    <button style="cursor:pointer;"id="openFormBtn">Create group</button>
+					<a href="#"></a>
+                    <!-- <button style="cursor:pointer;"id="openFormBtn">Create group</button> -->
 				</div>
                 <div class="card card4">
 					<h3>Your Group</h3>
 					<p></p>
-					<a href="airdetails.php"></a>
-                    <button style="cursor:pointer;"id="openFormBtn">Create group</button>
+					<a href="#"></a>
+                    <!-- <button style="cursor:pointer;"id="openFormBtn">Create group</button> -->
 				</div>
 				
 				
 			</div>
-            <form id="myForm" class="form">
-            <!-- Your form fields here -->
-            <h3>Poject details</h3>
-            <input type="text" placeholder="Project name" required>
-            <input type="number" placeholder="no. of members" required>
-            <input type ="email" placeholder= "email of memebter" required>
-            <button type="submit">Submit</button>
+            <form action= "" id="myForm" class="form">
+                <h3>Poject details</h3>
+            <div class="form-group">
+                <label>Member 1</label>
+                        <select name="team_members" id="team_members">
+                            <option value="" disabled selected>Select from users</option>
+                            <?php
+                            // Connecting to the database and retrieve the list of available users
+                            include '../html/dbcon.php';
+                            $result = mysqli_query($con, "SELECT * FROM users");
+                            // Loop through the results and create an option for each user
+                            while($row = mysqli_fetch_array($result)) {
+                            echo "<option value='" . $row['user_id'] . "'>" . $row['username'] . "</option>";
+                            }
+                            ?>
+                        </select>
+            </div>
+            <div class="form-group">
+                <label for="">Member 2</label>
+                            <select name="team_members" id="team_members">
+                            <option value="" disabled selected>Select from users</option>
+                            <?php
+                            // Connecting to the database and retrieve the list of available users
+                            include './html/dbcon.php';
+                            $result = mysqli_query($con, "SELECT * FROM users");
+                            // Loop through the results and create an option for each user
+                            while($row = mysqli_fetch_array($result)) {
+                            echo "<option value='" . $row['user_id'] . "'>" . $row['username'] . "</option>";
+                            }
+                            ?>
+                            </select>
+            </div>
+            <div class="form-group">
+                <label for="">Member 3</label>
+                            <select name="team_members" id="team_members">
+                            <option value="" disabled selected>Select from users</option>
+                            <?php
+                            // Connecting to the database and retrieve the list of available users
+                            include './html/dbcon.php';
+                            $result = mysqli_query($con, "SELECT * FROM users");
+                            // Loop through the results and create an option for each user
+                            while($row = mysqli_fetch_array($result)) {
+                            echo "<option value='" . $row['user_id'] . "'>" . $row['username'] . "</option>";
+                            }
+                            ?>
+                            </select>
+            </div>
+            <div class="form-group">
+                <label for="">Member 4</label>
+                            <select name="team_members" id="team_members">
+                            <option value="" disabled selected>Select from users</option>
+                            <?php
+                            // Connecting to the database and retrieve the list of available users
+                            include './html/dbcon.php';
+                            $result = mysqli_query($con, "SELECT * FROM users");
+                            // Loop through the results and create an option for each user
+                            while($row = mysqli_fetch_array($result)) {
+                            echo "<option value='" . $row['user_id'] . "'>" . $row['username'] . "</option>";
+                            }
+                            ?>
+                            </select>
+            </div>
+            <div class="operations">
+            <button type="submit" id="submitTeam">Submit</button>
             <button type="button" id="closeFormBtn">Close</button>
+            </div>
+            
 </form>
     </div>
     <script src="../js/home.js"></script>
