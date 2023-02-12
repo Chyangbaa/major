@@ -9,13 +9,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    <?php
+    include './html/dbcon.php';
+    if(isset($_POST['create_project'])){
+        $project_title = mysqli_real_escape_string($con, $_POST['project_title']);
+        $project_details = mysqli_real_escape_string($con, $_POST['project_details']);
+        $project_type = mysqli_real_escape_string($con, $_POST['project_type']);
+        $supervisor = mysqli_real_escape_string($con, $_POST['supervisor']);
+        $team_member1 = mysqli_real_escape_string($con, $_POST['team_member1']);
+        $team_member2 = mysqli_real_escape_string($con, $_POST['team_member2']);
+        $team_member3 = mysqli_real_escape_string($con, $_POST['team_member3']);
+        $team_member4 = mysqli_real_escape_string($con, $_POST['team_member4']);
+
+        $insertquery= "insert into "
+    }
+    ?>
     <a href="javascript:history.back()">
   <i class="fa-solid fa-xmark"></i>
 </a>
     <div class="container">
         <header>Create project</header>
 
-        <form action="">
+        <form action="" method="post">
             <div class="form first">
                 <div class="details personal">
                     <span class="title">Project details</span>
@@ -35,6 +50,7 @@
                             <label>Project type</label>
                             <select id="project_type" name="project_type" required>
             <option value="" disabled selected>Select</option>
+            <option value="webApplication">Web Application</option>
             <option value="ecommerce">E-commerce</option>
             <option value="software_development">Software Development</option>
             <option value="networking">Networking</option>
@@ -44,12 +60,12 @@
 
                         <div class="input-field">
                             <label> Supervisor</label>
-                            <select name="team_members" id="team_members">
+                            <select name="supervisor" id="team_members" required>
                             <option value="" disabled selected>Select your supervisor</option>
-                            <option value="prabinshrestha">Prabin Shrestha</option>
-                            <option value="prabinshrestha">Sumit Bidari</option>
-                            <option value="prabinshrestha">Anup Bhuju</option>
-                            <option value="prabinshrestha">Suraj Hekka</option>
+                            <option value="supervisor1">Prabin Shrestha</option>
+                            <option value="supervisor2">Sumit Bidari</option>
+                            <option value="supervisor3">Anup Bhuju</option>
+                            <option value="supervisor4">Suraj Hekka</option>
                             </select>
                         </div>
 
@@ -57,13 +73,13 @@
                     </div>
                 </div>
                         <!-- second fields -->
-                 <div class="details personal">
+                <div class="details personal">
                     <span class="title">Team members</span>
                     <div class="fields">
 
                         <div class="input-field">
                             <label>Member 1</label>
-                            <select name="team_members" id="team_members">
+                            <select name="team_member1" id="team_members" required>
                             <option value="" disabled selected>Select from users</option>
                             <?php
                             // Connecting to the database and retrieve the list of available users
@@ -79,7 +95,7 @@
 
                         <div class="input-field">
                             <label>Member 2</label>
-                            <select name="team_members" id="team_members">
+                            <select name="team_member2" id="team_members" required>
                             <option value="" disabled selected>Select from users</option>
                             <?php
                             // Connecting to the database and retrieve the list of available users
@@ -95,7 +111,7 @@
 
                         <div class="input-field">
                             <label>Member 3</label>
-                            <select name="team_members" id="team_members">
+                            <select name="team_member3" id="team_members" required>
                             <option value="" disabled selected>Select from users</option>
                             <?php
                             // Connecting to the database and retrieve the list of available users
@@ -110,7 +126,7 @@
                         </div>
                         <div class="input-field">
                             <label>Member 4</label>
-                            <select name="team_members" id="team_members">
+                            <select name="team_member4" id="team_members"required>
                             <option value="" disabled selected>Select from users</option>
                             <?php
                             // Connecting to the database and retrieve the list of available users
@@ -124,7 +140,7 @@
                             </select>
                         </div>
                     </div>
-                    <button class="btn">
+                    <button class="btn" name="create_project">
                         <span class="btntext">Create</span>
                         <i class="fa-solid fa-plus"></i>
                     </button>
